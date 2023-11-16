@@ -14,6 +14,9 @@ The generated architecture by the AWS designer is attached below:
 <img src="template.png" width=900 >
 
 #### Summary of template resources:
+
+
+```python
 Resources:
   VPC:
     Type: AWS::EC2::VPC
@@ -66,10 +69,15 @@ Resources:
   PrivateSubnetRTBAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     ...
+```
+
 ### Automation:
 
 Template deployment and AWS stack creation process can be automated by taking user inputs for various parameters in the template.
 For example, the values for the following VpcName and VpcCidr can be overridden by the user inputs. This process is implemented briefly in the automation.py file.
+
+
+```python
 VpcName:
     Description: Name of the VPC to be created
     Type: String
@@ -79,6 +87,8 @@ VpcCidr:
     Description: VPC CIDR range
     Type: String
     Default: 10.192.0.0/16
+```
+
 #### Override CF template parameters:
 
 
